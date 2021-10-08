@@ -18,7 +18,55 @@
         <div data-include="nav"></div>
 
         <!--Page Stuff Below-->
-        <p>question enter page</p>
+        <br>
+        
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="question-user-email" class="form-label">User Email</label>
+            <input type="email" class="form-control" id="question-user-email" placeholder="name@example.com">
+          </div>
+          <div class="col-md-6">
+            <label for="question-user-name" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="question-user-name" placeholder="password123">
+          </div>
+          <div class="col-12">
+            <label for="question-input" class="form-label">Question</label>
+            <input type="text" class="form-control" id="question-input" placeholder="Question Input">
+          </div>
+          <div class="col-12">
+            <label for="question-comments" class="form-label">Additional Comments</label>
+            <input type="text" class="form-control" id="question-comments" placeholder="Additional Comments">
+          </div>
+          <div class="col-md-4">
+            <label for="question-textbook" class="form-label">Textbook</label>
+            <input type="text" class="form-control" id="question-textbook ">
+          </div>
+          <div class="col-md-4">
+            <label for="question-subject" class="form-label">Subject</label>
+            <select id="question-subject" class="form-select">
+              <option selected>Choose...</option>
+              <option>English</option>
+              <option>Math</option>
+              <option>Science</option>
+              <option>History</option>
+              <option>Computer Science</option>
+              <option>Language</option>
+              <option>College</option>
+              <option>General</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <form action="/action_page.php">
+              <label for="question-file" class="form-label">Upload an Image of Question</label>
+              <input type="file" id="question-file" name="filename">
+            </form>
+          </div>
+
+        </form>
+
+
+        <!--Spacing Stuff Below-->
       </div>
       <div class="col"></div>
     </div>

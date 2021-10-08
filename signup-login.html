@@ -20,13 +20,13 @@
         <!--Page Stuff Below-->
         <div id="login-form" class="text-center">
           <main class="form-signin">
-          <form id="signin-form">
+          <form id="signin-form" class="row g-3">
             <h1 class="h3 mb-3 fw-normal">Sign In</h1>
-            <div class="form-floating">
+            <div class="form-floating col-12">
               <input type="email" class="form-control" id="floating-input" placeholder="name@example.com">
               <label for="floating-input">Email Address</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating col-12">
               <input type="password" class="form-control" id="floating-password" placeholder="Password">
               <label for="floating-password">Password</label>
             </div>
@@ -36,13 +36,13 @@
                 Remember Me
               </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+            <button id="login-button" class="w-50 btn btn-lg btn-primary" type="submit">Sign In</button>
           </form>
 
           <br>
 
           <!-- Button trigger modal -->
-          <button type="button" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">
+          <button type="button" class="w-50 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">
             Register
           </button>
 
@@ -55,21 +55,21 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form id="signup-form">
+                  <form id="signup-form" class="row g-3">
                     <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
-                    <div class="form-floating">
+                    <div class="form-floating col-md-6">
                       <input type="email" class="form-control" id="floating-input" placeholder="name@example.com">
                       <label for="floating-input">Email Address</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating col-md-6">
                       <input type="text" class="form-control" id="username" placeholder="username">
                       <label for="username">Display Name</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating col-12">
                       <input type="password" class="form-control" id="floating-password" placeholder="Password">
                       <label for="floating-password">Password</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating col-12">
                       <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
                       <label for="confirm-password">Confirm Password</label>
                     </div>
