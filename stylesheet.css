@@ -9,3 +9,12 @@
   border-radius: .3rem;
 }
 
+#login-form{
+display: flex;
+justify-content: center !important;
+align-items: center;
+padding-top: 40px;
+padding-bottom: 40px;
+background-color: rgb(224, 224, 224);
+}
+

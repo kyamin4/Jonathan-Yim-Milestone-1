@@ -18,14 +18,79 @@
         <div data-include="nav"></div>
 
         <!--Page Stuff Below-->
-        <div class="text-center">
-          <form>
+        <div id="login-form" class="text-center">
+          <main class="form-signin">
+          <form id="signin-form">
             <h1 class="h3 mb-3 fw-normal">Sign In</h1>
-            <input type="email" class="form-control" id="floating-input" placeholder="name@example.com">
-            <label for="floating-input">Email Address</label>
+            <div class="form-floating">
+              <input type="email" class="form-control" id="floating-input" placeholder="name@example.com">
+              <label for="floating-input">Email Address</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floating-password" placeholder="Password">
+              <label for="floating-password">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me">
+                Remember Me
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
           </form>
 
+          <br>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">
+            Register
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade modal-dialog modal-lg" id="signup-modal" tabindex="-1" aria-labelledby="signup-modal1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signup-modal1">. . .</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="signup-form">
+                    <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="floating-input" placeholder="name@example.com">
+                      <label for="floating-input">Email Address</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="username" placeholder="username">
+                      <label for="username">Display Name</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="floating-password" placeholder="Password">
+                      <label for="floating-password">Password</label>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
+                      <label for="confirm-password">Confirm Password</label>
+                    </div>
+                    <div class="checkbox mb-3">
+                      <label>
+                        <input type="checkbox" value="email-updates">
+                        Send Email Updates
+                      </label>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
         </div>
+
+        
 
       </div>
       <!--Spacing Stuff Below-->
