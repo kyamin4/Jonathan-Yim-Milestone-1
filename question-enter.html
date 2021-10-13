@@ -26,7 +26,7 @@
             <input type="email" class="form-control" id="question-user-email" placeholder="name@example.com">
           </div>
           <div class="col-md-6">
-            <label for="question-user-name" class="form-label">User Name</label>
+            <label for="question-user-name" class="form-label">User Name (leave blank if anonymous)</label>
             <input type="text" class="form-control" id="question-user-name" placeholder="password123">
           </div>
           <div class="col-12">
@@ -59,10 +59,10 @@
           <div class="col-md-4">
             <form action="/action_page.php">
               <label for="question-file" class="form-label">Upload an Image of Question</label>
-              <input type="file" id="question-file" name="filename">
-            </form>
+              <input type="file" multiple accept="image/*" id="question-file" name="filename">
           </div>
-
+          <br> 
+          <button id="queston-submit-button" class="w-100 btn btn-lg btn-primary" type="submit">Submit Question</button>
         </form>
 
 
