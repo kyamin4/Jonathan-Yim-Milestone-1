@@ -18,11 +18,13 @@ function questionEnter(){
   var subject = document.getElementById("question-subject").value;
   var image = document.getElementById("question-image").value;
 
+  if(username == null){
+    username = "Anonymous";
+  }
+}
+
   var fullQuestion = {
-    if(username) == null{
-      username = "Anonymous";
-    }
-    
+
     userEmail: email,
     userName: username,
     userQuestion: question,
@@ -30,7 +32,6 @@ function questionEnter(){
     userTextbook: textbook,
     userSubject: subject,
     userImage: image
-  }
 
 }
 
