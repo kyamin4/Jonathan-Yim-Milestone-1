@@ -19,6 +19,10 @@ function questionEnter(){
   var image = document.getElementById("question-image").value;
 
   var fullQuestion = {
+    if(username) == null{
+      username = "Anonymous";
+    }
+    
     userEmail: email,
     userName: username,
     userQuestion: question,
