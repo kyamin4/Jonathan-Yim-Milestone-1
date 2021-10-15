@@ -9,6 +9,12 @@ $(function () {
 
   })
 
+var fullQuestion = {
+
+}
+
+const linebreak = document.createElement("br");
+
 function questionEnter(){
   var email = document.getElementById("question-user-email").value;
   var username = document.getElementById("question-user-name").value;
@@ -18,12 +24,20 @@ function questionEnter(){
   var subject = document.getElementById("question-subject").value;
   var image = document.getElementById("question-image").value;
 
-  if(username == null){
+  if(username == "" || username == null){
     username = "Anonymous";
   }
-}
 
-  var fullQuestion = {
+  if(comments == "" || comments == null){
+    comments = "No comments."
+  }
+
+  if(image == "" || image == null){
+    image  = "No image."
+  }
+
+
+  fullQuestion = {
 
     userEmail: email,
     userName: username,
@@ -32,7 +46,7 @@ function questionEnter(){
     userTextbook: textbook,
     userSubject: subject,
     userImage: image
-
+}
 }
 
 function clearQuestionEntryFields(){
@@ -43,4 +57,25 @@ function clearQuestionEntryFields(){
   document.getElementById("question-textbook").value = "";
   document.getElementById("question-subject").value = "";
   document.getElementById("question-image").value = "";
+}
+
+$(document).ready(function(){
+  $('#question-submit-button').click(function(){
+    questionEnter();
+    clearQuestionEntryFields();
+    console.log(fullQuestion);
+    displayQuestion();
+  });
+});
+
+function displayQuestion(){
+  jQuery(document).ready(function() {
+    $("#question-results").append("Entered Email: " + fullQuestion.userEmail + '\n');
+    $("#question-results").append("Entered Username: " + fullQuestion.userName + '\n'); 
+    $("#question-results").append("Entered Question: " + fullQuestion.userQuestion + '\n'); 
+    $("#question-results").append("Entered Comments: " + fullQuestion.userComments + '\n'); 
+    $("#question-results").append("Entered Textbook: " + fullQuestion.userTextbook + '\n'); 
+    $("#question-results").append("Entered Subject: " + fullQuestion.userTextbook + '\n'); 
+    $("#question-results").append("Entered Image: " + fullQuestion.userImage + '\n'); 
+  });
 }
