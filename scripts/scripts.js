@@ -5,77 +5,69 @@ $(function () {
       $(this).load(file)
     })
 
-    document.title = "your site name"
+    document.title = "gg go next"
 
   })
+
 
 var fullQuestion = {
 
 }
 
-const linebreak = document.createElement("br");
-
 function questionEnter(){
-  var email = document.getElementById("question-user-email").value;
-  var username = document.getElementById("question-user-name").value;
-  var question = document.getElementById("question-input").value;
-  var comments = document.getElementById("question-comments").value;
-  var textbook = document.getElementById("question-textbook").value;
-  var subject = document.getElementById("question-subject").value;
-  var image = document.getElementById("question-image").value;
+  var email = document.getElementById("question_user_email");
+  var username = document.getElementById("question_user_name");
+  var question = document.getElementById("question_input");
+  var comments = document.getElementById("question_comments");
+  var textbook = document.getElementById("question_textbook");
+  var subject = document.getElementById("question_subject");
+  var image = document.getElementById("question_file");
 
   if(username == "" || username == null){
     username = "Anonymous";
   }
-
   if(comments == "" || comments == null){
     comments = "No comments."
   }
-
   if(image == "" || image == null){
     image  = "No image."
   }
 
-
   fullQuestion = {
-
-    userEmail: email,
-    userName: username,
-    userQuestion: question,
-    userComments: comments,
-    userTextbook: textbook,
-    userSubject: subject,
-    userImage: image
-}
+    userEmail: email.value,
+    userName: username.value,
+    userQuestion: question.value,
+    userComments: comments.value,
+    userTextbook: textbook.value,
+    userSubject: subject.value,
+    userImage: image.value
+  }
+  console.log(fullQuestion);
 }
 
 function clearQuestionEntryFields(){
-  document.getElementById("question-user-email").value = "";
-  document.getElementById("question-user-name").value = "";
-  document.getElementById("question-input").value = "";
-  document.getElementById("question-comments").value = "";
-  document.getElementById("question-textbook").value = "";
-  document.getElementById("question-subject").value = "";
-  document.getElementById("question-image").value = "";
+  document.getElementById("question_user_email").value = "";
+  document.getElementById("question_user_name").value = "";
+  document.getElementById("question_input").value = "";
+  document.getElementById("question_comments").value = "";
+  document.getElementById("question_textbook").value = "";
+  document.getElementById("question_subject").value = "";
+  document.getElementById("question_file").value = "";
 }
 
-$(document).ready(function(){
-  $('#question-submit-button').click(function(){
+  $("#question_submit").click(function(){
+    console.log("Submit button clicked!")
     questionEnter();
-    clearQuestionEntryFields();
-    console.log(fullQuestion);
     displayQuestion();
+    clearQuestionEntryFields();
   });
-});
 
 function displayQuestion(){
-  jQuery(document).ready(function() {
-    $("#question-results").append("Entered Email: " + fullQuestion.userEmail + '\n');
-    $("#question-results").append("Entered Username: " + fullQuestion.userName + '\n'); 
-    $("#question-results").append("Entered Question: " + fullQuestion.userQuestion + '\n'); 
-    $("#question-results").append("Entered Comments: " + fullQuestion.userComments + '\n'); 
-    $("#question-results").append("Entered Textbook: " + fullQuestion.userTextbook + '\n'); 
-    $("#question-results").append("Entered Subject: " + fullQuestion.userTextbook + '\n'); 
-    $("#question-results").append("Entered Image: " + fullQuestion.userImage + '\n'); 
-  });
+    $("#question_results").append("Entered Email: " + fullQuestion.userEmail + '\n');
+    $("#question_results").append("Entered Username: " + fullQuestion.userName + '\n'); 
+    $("#question_results").append("Entered Question: " + fullQuestion.userQuestion + '\n'); 
+    $("#question_results").append("Entered Comments: " + fullQuestion.userComments + '\n'); 
+    $("#question_results").append("Entered Textbook: " + fullQuestion.userTextbook + '\n'); 
+    $("#question_results").append("Entered Subject: " + fullQuestion.userTextbook + '\n'); 
+    $("#question_results").append("Entered Image: " + fullQuestion.userImage + '\n'); 
 }
