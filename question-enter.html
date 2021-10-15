@@ -20,30 +20,30 @@
         <!--Page Stuff Below-->
         <br>
         
-        <form class="row g-3">
+        <form class="row g-3" action="question-enter.html" method="get">
           <div class="col-md-6">
-            <label for="question-user-email" class="form-label">User Email</label>
-            <input type="email" class="form-control" id="question-user-email" placeholder="name@example.com">
+            <label for="question_user_email" class="form-label">User Email</label>
+            <input type="email" class="form-control" name="question_user_email" id="question_user_email" placeholder="name@example.com" required>
           </div>
           <div class="col-md-6">
-            <label for="question-user-name" class="form-label">User Name (leave blank if anonymous)</label>
-            <input type="text" class="form-control" id="question-user-name" placeholder="username123">
+            <label for="question_user_name" class="form-label">User Name (leave blank if anonymous)</label>
+            <input type="text" class="form-control" name="question_user_name" id="question_user_name" placeholder="username123">
           </div>
           <div class="col-12">
-            <label for="question-input" class="form-label">Question</label>
-            <input type="text" class="form-control" id="question-input" placeholder="Question Input">
+            <label for="question_input" class="form-label">Question</label>
+            <input type="text" class="form-control" name="question_input" id="question_input" placeholder="Question Input" required>
           </div>
           <div class="col-12">
-            <label for="question-comments" class="form-label">Additional Comments</label>
-            <input type="text" class="form-control" id="question-comments" placeholder="Additional Comments">
+            <label for="question_comments" class="form-label">Additional Comments</label>
+            <input type="text" class="form-control" name="question_comments" id="question_comments" placeholder="Additional Comments">
           </div>
           <div class="col-md-4">
-            <label for="question-textbook" class="form-label">Textbook</label>
-            <input type="text" class="form-control" id="question-textbook ">
+            <label for="question_textbook" class="form-label">Textbook</label>
+            <input type="text" class="form-control" name="question_textbook" id="question_textbook">
           </div>
           <div class="col-md-4">
-            <label for="question-subject" class="form-label">Subject</label>
-            <select id="question-subject" class="form-select">
+            <label for="question_subject" class="form-label">Subject</label>
+            <select name="question_subject" id="question_subject" class="form-select">
               <option selected>Choose...</option>
               <option>English</option>
               <option>Math</option>
@@ -58,14 +58,16 @@
           </div>
           <div class="col-md-4">
             <form action="/action_page.php">
-              <label for="question-file" class="form-label">Upload an Image of Question</label>
-              <input type="file" multiple accept="image/*" id="question-file" name="filename">
+              <label for="question_file" class="form-label">Upload an Image of Question</label>
+              <input type="file" multiple accept="image/*" id="question_file" name="filename">
           </div>
           <br> 
-          <button id="queston-submit-button" class="w-100 btn btn-lg btn-primary" type="submit">Submit Question</button>
+          <button id="queston_submit" class="w-100 btn btn-lg btn-primary" type="submit">Submit Question</button>
         </form>
 
-        <div id="question-results">
+        <br>
+        
+        <div id="question_results">
           
         </div>
 
@@ -80,6 +82,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="scripts/scripts.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
+
+    <script type="text/javascript">
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const email = urlParams.get('question_user_email');
+      const name = urlParams.get('question_user_name');
+      const question = urlParams.get('question_input');
+      const comments = urlParams.get('question_comments');
+      const textbook = urlParams.get('question_textbook');
+      const subject = urlParams.get('question_subject');
+      const image = urlParams.getAll('question_file')
+      var output = "Email: " + email + "<br> Name: " + name + "<br> Question: " + question + "<br> Comments: " + comments + "<br> Textbook: " + textbook + "<br> Subject: " + subject;
+  
+      jQuery(document).ready(function() {
+        $("#question_results").html(output); 
+      });
+    </script>
+
 </body>
 </html>
 
