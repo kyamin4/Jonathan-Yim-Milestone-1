@@ -58,8 +58,6 @@ function clearQuestionEntryFields(){
   $("#question_submit").click(function(){
     console.log("Submit button clicked!")
     questionEnter();
-    displayQuestion();
-    clearQuestionEntryFields();
   });
 
 function displayQuestion(){
