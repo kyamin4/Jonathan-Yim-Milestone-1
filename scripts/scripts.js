@@ -9,9 +9,11 @@ $(function () {
 
   })
 
-/*
+
   var fullQuestion = {
   }
+
+  var isQuestionValid = false;
   
 function questionEnter(){
 var email = document.getElementById("question_user_email");
@@ -22,17 +24,9 @@ var textbook = document.getElementById("question_textbook");
 var subject = document.getElementById("question_subject");
 var image = document.getElementById("question_file");
 
-if(username == "" || username == null){
-  username = "Anonymous";
-}
-if(comments == "" || comments == null){
-  comments = "No comments.";
-}
-if(image == "" || image == null){
-  image  = "No image.";
-}
-if(subject=="Choose..."){
-  subject = "N/A or Other";
+if(email.value === "" || email.value === null || question.value === "" || question.value === null){
+  alert("Please make sure to write an email and question!");
+  return
 }
 
 fullQuestion = {
@@ -45,8 +39,27 @@ fullQuestion = {
   userImage: image.value
 }
 
+
+
+if(username.value === "" || username.value === null){
+  fullQuestion.userName = "Anonymous";
+}
+if(comments.value === "" || comments.value === null){
+  fullQuestion.userComments = "No comments.";
+}
+if(image.value === "" || image.value === null){
+  fullQuestion.userImage  = "No image.";
+}
+if(subject.value === "Choose..."){
+  fullQuestion.userSubject = "N/A or Other";
+}
+if(textbook.value === "" || textbook.value === null){
+  fullQuestion.userTextbook = "No textbook specified.";
+}
+
 console.log(fullQuestion);
 console.log("Question entered!");
+isQuestionValid = true;
 }
 
 function clearQuestionEntryFields(){
@@ -60,25 +73,19 @@ document.getElementById("question_file").value = "";
 console.log("Clear entry fields done!");
 }
 
-document.getElementById("question_submit").addEventListener("mouseup", run_question_full());
-
 function run_question_full(){
-  console.log("Submit button clicked!")
+  console.log("Submit button clicked!");
+  isQuestionValid = false;
   questionEnter();
+  if(isQuestionValid === false){
+    return
+  }
   displayQuestion();
-  console.log(fullQuestion + "END");
   clearQuestionEntryFields();
 }
 
 function displayQuestion(){
-document.getElementById("question_results").append("Entered Email: " + fullQuestion.userEmail);
-document.getElementById("question_results").append("Entered Username: " + fullQuestion.userName); 
-document.getElementById("question_results").append("Entered Question: " + fullQuestion.userQuestion); 
-document.getElementById("question_results").append("Entered Comments: " + fullQuestion.userComments); 
-document.getElementById("question_results").append("Entered Textbook: " + fullQuestion.userTextbook); 
-document.getElementById("question_results").append("Entered Subject: " + fullQuestion.userTextbook); 
-document.getElementById("question_results").append("Entered Image: " + fullQuestion.userImage); 
+  var output = "Entered Email: " + fullQuestion.userEmail + '\n' + "Entered Username: " + fullQuestion.userName + '\n' + "Entered Question: " + fullQuestion.userQuestion + '\n' + "Entered Comments: " + fullQuestion.userComments + '\n' + "Entered Textbook: " + fullQuestion.userTextbook + '\n' + "Entered Subject: " + fullQuestion.userSubject + '\n' + "Entered Image: " + fullQuestion.userImage;
+document.getElementById("question_results").innerText = output;
 console.log("Display questions done!");
 }
-
-*/
